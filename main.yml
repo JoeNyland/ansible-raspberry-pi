@@ -36,3 +36,11 @@
       alternatives:
         name: editor
         path: /usr/bin/vim.basic
+
+    - name: Disable HDMI on startup (for power savings)
+      lineinfile:
+        dest: /etc/rc.local
+        regexp: "^/usr/bin/tvservice"
+        line: "/usr/bin/tvservice -o"
+        insertbefore: "^exit"
+        state: present
