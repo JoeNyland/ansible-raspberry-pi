@@ -1,0 +1,38 @@
+---
+- hosts: raspberrypi
+  become: true
+
+  tasks:
+    - name: Add my SSH keys
+      authorized_key:
+        user: pi
+        key: https://github.com/joenyland.keys
+
+    - name: Disable password for pi user
+      user:
+        name: pi
+        password_lock: yes
+
+    - name: Update package cache
+      apt:
+        update_cache: true
+        cache_valid_time: 86400
+
+    - name: Upgrade system packages
+      apt:
+        upgrade: true
+        autoremove: true # Remove old packages
+        purge: true # Purge config files for old packages that were removed
+
+    - name: Install utils
+      apt:
+        name:
+          - htop
+          - multitail
+          - vim
+          - git
+
+    - name: Set default editor
+      alternatives:
+        name: editor
+        path: /usr/bin/vim.basic
