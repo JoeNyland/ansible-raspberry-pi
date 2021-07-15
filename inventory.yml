@@ -3,6 +3,7 @@ all:
   hosts:
     raspberrypi:
       ansible_user: pi
+      ansible_password: raspberry # This is just the default password and it will be removed in the playbook.
       ansible_python_interpreter: /usr/bin/python
       # By default, ansible wants to use sshpass, which is not available on macOS.
       # Instead, we tell Ansible to use paramiko, which appears to be built-in, thus not requiring a separate install.
