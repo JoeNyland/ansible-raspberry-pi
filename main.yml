@@ -7,6 +7,7 @@
       authorized_key:
         user: pi
         key: https://github.com/joenyland.keys
+        exclusive: true  # Only allow keys specified here
 
     - name: Disable password for pi user
       user:
