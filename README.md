@@ -2,14 +2,6 @@
 
 Configures a Raspberry Pi OS installation for me, using Ansible.
 
-## Setup
-
-```bash
-python3 -m venv --upgrade-deps venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
 ## Usage
 
 ### Fresh Raspberry Pi OS installation
