@@ -13,7 +13,7 @@ Instead, we tell Ansible to use `paramiko` for the connection, which is installe
 The default password is 'raspberry'. This is just the default password and it will be removed in the playbook.
 
 ```bash
-ansible-playbook --connection=paramiko --ask-pass main.yml
+ansible-playbook --connection=paramiko --ask-pass playbooks/main.yml
 ```
 
 ### Existing Raspberry Pi OS installation
@@ -21,5 +21,5 @@ ansible-playbook --connection=paramiko --ask-pass main.yml
 Once the Raspberry Pi has been configured [above](#fresh-raspberry-pi-os-installation), SSH keys can now be used for authentication and we no longer need to override the connection provider or provide a password.
 
 ```bash
-ansible-playbook main.yml
+ansible-playbook playbooks/main.yml
 ```
