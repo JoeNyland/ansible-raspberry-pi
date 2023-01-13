@@ -2,5 +2,4 @@
 all:
   hosts:
     raspberrypi:
-      ansible_user: pi
       ansible_python_interpreter: /usr/bin/python

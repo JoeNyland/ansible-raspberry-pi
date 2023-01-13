@@ -5,9 +5,14 @@
   tasks:
     - name: Add my SSH keys
       authorized_key:
-        user: pi
+        user: joe
         key: https://github.com/joenyland.keys
         exclusive: true  # Only allow keys specified here
+
+    - name: Disable password
+      user:
+        name: joe
+        password_lock: yes
 
     - name: Update package cache
       apt:
@@ -40,9 +45,3 @@
         line: "/usr/bin/tvservice -o"
         insertbefore: "^exit"
         state: present
-
-    # Perform this last, so that on first setup, we don't get kicked out
-    - name: Disable password for pi user
-      user:
-        name: pi
-        password_lock: yes
