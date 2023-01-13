@@ -29,7 +29,7 @@
       apt:
         name:
           - htop
-          - multitail
+          - tmux
           - vim
           - git
 
