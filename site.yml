@@ -45,3 +45,8 @@
         line: "/usr/bin/tvservice -o"
         insertbefore: "^exit"
         state: present
+      notify: Reboot
+
+  handlers:
+    - name: Reboot
+      reboot:
