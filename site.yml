@@ -9,11 +9,6 @@
         key: https://github.com/joenyland.keys
         exclusive: true  # Only allow keys specified here
 
-    - name: Disable password
-      user:
-        name: joe
-        password_lock: yes
-
     - name: Update package cache
       apt:
         update_cache: true
